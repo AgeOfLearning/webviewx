@@ -161,14 +161,15 @@ class _WebViewXState extends State<WebViewX> {
 
     webViewXController = _createWebViewXController();
 
-    if (widget.initialSourceType == SourceType.html ||
-        widget.initialSourceType == SourceType.urlBypass ||
-        (widget.initialSourceType == SourceType.url &&
-            widget.initialContent == 'about:blank')) {
-      _connectJsToFlutter(then: _callOnWebViewCreatedCallback);
-    } else {
-      _callOnWebViewCreatedCallback();
-    }
+    // if (widget.initialSourceType == SourceType.html ||
+    //     widget.initialSourceType == SourceType.urlBypass ||
+    //     (widget.initialSourceType == SourceType.url &&
+    //         widget.initialContent == 'about:blank')) {
+    //   _connectJsToFlutter(then: _callOnWebViewCreatedCallback);
+    // } else {
+    //   _callOnWebViewCreatedCallback();
+    // }
+    _connectJsToFlutter(then: _callOnWebViewCreatedCallback);
 
     _registerIframeOnLoadCallback();
 
