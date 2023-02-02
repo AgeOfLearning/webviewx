@@ -436,20 +436,14 @@ class _WebViewXState extends State<WebViewX> {
           break;
         }
 
-        if (!source.startsWith(RegExp('http[s]?://', caseSensitive: false))) {
-          _debugLog('Invalid URL supplied for webview: $source');
-          return;
-        }
+        // if (!source.startsWith(RegExp('http[s]?://', caseSensitive: false))) {
+        //   _debugLog('Invalid URL supplied for webview: $source');
+        //   return;
+        // }
 
-        if (model.sourceType == SourceType.url) {
+        if (model.sourceType == SourceType.url || model.sourceType == SourceType.urlBypass) {
           iframe.contentWindow!.location.href = source;
-        } else {
-          _tryFetchRemoteSource(
-            method: 'get',
-            url: source,
-            headers: model.headers,
-          );
-        }
+        } 
         break;
     }
   }
