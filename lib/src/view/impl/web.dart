@@ -217,6 +217,7 @@ class _WebViewXState extends State<WebViewX> {
       };
 
       webViewXController.connector = jsWindowObject;
+      print('testing::: jsWindowObject -> $jsWindowObject');
 
       then?.call();
 
